@@ -17,12 +17,24 @@ type Post{
 }
 type Query{
     posts:[Post]
+}
+type Mutation{
+    createPost(title:String!):Post
 }`
+
 
 const resolvers = {
     Query: {
         posts: () => posts
+    },
+    Mutation: {
+        createPost: ( __, { title }) => {
+          allPosts.push({ id: allPosts.length + 1, title });
+    
+          return allPosts[allPosts.length - 1];
+        },
     }
+  
 }
 
 const server = new ApolloServer({
@@ -31,5 +43,5 @@ const server = new ApolloServer({
 })
 
 server.listen(8000, () => {
-
+console.log("Server has started on port 8000");
 })
