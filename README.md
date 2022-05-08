@@ -2,4 +2,3 @@
 
 - Write Query
 - Create Posts
-- 
