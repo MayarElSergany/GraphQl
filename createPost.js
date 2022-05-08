@@ -1,7 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server')
 const { type } = require('os')
 const posts = [{
-    tittle: "post1",
+    title: "post1",
     id: "1"
 },
 {
@@ -29,9 +29,8 @@ const resolvers = {
     },
     Mutation: {
         createPost: ( __, { title }) => {
-          allPosts.push({ id: allPosts.length + 1, title });
-    
-          return allPosts[allPosts.length - 1];
+          posts.push({ id: posts.length + 1, title });
+          return posts[posts.length - 1];
         },
     }
   
