@@ -1,7 +1,7 @@
 # GraphQl
 
 
-# Run on localhost using url (
+# Run on 
 
 - Write Query
 - Create Posts
